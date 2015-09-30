@@ -1,64 +1,50 @@
 <html>
-<head> Vending Machine</head>
+<head> Lab5</head>
 <title> Lab 5 </title>
 <script src="scripts/processing.js"></script>
 <script type="text/processing" data-processing-target="mycanvas">
 
-PImage chipsVariable;
-//image size 500X500
-PImage cokeVariable;
-//image size 500X500
-PImage cookieVariable;
-//image size 500X500
 
 
 
 void setup(){
 
-size( 1500, 1500 );
-background(255,255,255);
-frameRate( 30 );
-
-chipsVariable = loadImage("imagelab4/chips.png");
-cokeVariable = loadImage("imagelab4/coke.png");
-cookieVariable = loadImage("imagelab4/cookie.png");
-
-
-
+	size( 1500, 1500 );
+	background(0,0,0);
+	frameRate( 30 );
 
 }
 
 
 void draw()
 {
-image(chipsVariable,0,0);
-image(cokeVariable,350,0);
-image(cookieVariable,350+299+16,236);
+	background(0,0,0);
+	fill(255,255,255);
+	rect(50,50,200,100);
 
-fill(255,255,255);
-strokeWeight(5);
-rect(25,480,150,75);
-rect(405,480,150,75);
-rect(805,480,150,75);
+	text(mouseX,60,10);
+	text("mouseX:",0,10);
+	text("mouseY:",100,10);
+	text(mouseY,160,10);
 
-fill(0,0,0,0);
-rect(0,0,1300,600);
-rect(0,0,400,480);
-rect(0,0,650,480);
-rect(0,0,1250,480);
-rect(0,0,1250,560);
+	if (mouseX > 100 && mouseX < 200)
+	{
+		text("mouseX is more than 100 and "+ "X is greater than 200",500,100);
 
-
-
-
-fill(0,0,0)
-text("$100",60,500);
-text("$50",460,500);
-text("$250",865,500);
+	}
+	
+	
+	
+	//nested IF
+	if (mouseX < 200)
+	{
+		if(mouseX > 100)
+			text("mouseX is less than 10",500,150);
+	}
+	
 
 
 }
-
 </script>
 <canvas id="mycanvas"></canvas>
 </head>

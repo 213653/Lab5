@@ -1,0 +1,136 @@
+<html>
+<head> Vending Machine</head>
+<title> Lab 5 </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+PImage chipsVariable;
+//image size 500X500
+PImage cokeVariable;
+//image size 500X500
+PImage cookieVariable;
+//image size 500X500
+PImage thankyouVariable;
+//image size 250X250
+
+
+void setup(){
+
+size( 1500, 1500 );
+
+frameRate( 30 );
+
+chipsVariable = loadImage("imagelab5/chips.png");
+cokeVariable = loadImage("imagelab5/coke.png");
+cookieVariable = loadImage("imagelab5/cookie.png");
+thankyouVariable = loadImage("imagelab5/thankyou.jpg");
+
+
+}
+
+
+void draw()
+{
+
+
+
+
+	background(255,255,255);
+	
+	
+	
+	
+	image(chipsVariable,0,0);
+	image(cokeVariable,350,0);
+	image(cookieVariable,350+299+16,236);
+
+	fill(0,205,168);
+	strokeWeight(5);
+	rect(25,480,150,75);
+	rect(405,480,150,75);
+	rect(805,480,150,75);
+	
+
+	fill(00,0,0,0);
+	rect(0,0,1300,600);
+	rect(0,0,400,480);
+	rect(0,0,650,480);
+	rect(0,0,1250,480);
+	rect(0,0,1250,560);
+
+	
+		   	  
+
+
+	fill(0,0,0);
+	text("$100",60,500);
+	text("$50",460,500);
+	text("$250",865,500);
+	
+	
+	
+ if (mouseX > 25 && mouseX < 175 && mouseY > 480 && mouseY < 480+75)
+	{
+		
+		text("Press the price tag to BUY!!!",200,520);
+	}
+	
+ if (mouseX > 405 && mouseX < 550 && mouseY > 480 && mouseY < 480+75)
+	{
+		
+		text("Press the price tag to BUY!!!",600,520);
+	}
+	
+ if (mouseX > 805 && mouseX < 805+150 && mouseY > 480 && mouseY < 480+75)
+	{
+		
+		text("Press the price tag to BUY!!!",1000,520);
+	}
+	
+	
+	
+	
+	
+	
+	if (mousePressed == true && mouseButton == LEFT)
+		{
+		if(mouseX > 25 && mouseX < 175 && mouseY > 400 && mouseY < 555)
+			{
+				fill (255,0,0)
+				rect(25,480,150,75);
+				text ("Purchased, please wait",200,540);
+				image(thankyouVariable,250,10);
+
+			}
+	if(mouseX > 405 && mouseX < 550 && mouseY > 480 && mouseY < 480+75)
+			{
+				fill (255,0,0)
+				rect(405,480,150,75);
+				text ("Purchased, please wait",600,540);
+				image(thankyouVariable,250,10);
+
+			}
+	if(mouseX > 805 && mouseX < 805+150 && mouseY > 480 && mouseY < 480+75)
+		{
+			fill (255,0,0)
+			rect(805,480,150,75);
+			text ("Purchased, please wait",1000,540);
+			image(thankyouVariable,250,10);
+
+		}	
+
+	}
+			
+
+	}
+	
+
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>
+
